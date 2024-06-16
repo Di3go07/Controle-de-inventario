@@ -66,7 +66,7 @@ Dentro do arquivo, inicie o terminal
 
 No terminal, escolha entre logar com um usuario ou criar um novo usuário
 
-Caso deseje logar com um usuario, algumas contras já criadas são:
+Caso deseje logar com um usuario, algumas contas já criadas são:
 | id           | nome           | senha         | cargo         |
 | :---         | :---           | :---          | :---          |
 | 1            | gerente        | 23901         | gerente       |
