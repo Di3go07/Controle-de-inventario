@@ -76,9 +76,5 @@ Caso deseje logar com um usuario, algumas contas já criadas são:
 
 Aproveite o programa!
 
-## 👨‍💻 Desenvolvedor 
-Responsável pela criação do projeto 
 
-Diego - Programação e documentação
 
-Conheça mais acessando o GitHub do desenvolvedor [aqui](https://github.com/Di3go07)!
