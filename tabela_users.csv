@@ -2,5 +2,5 @@ id,nomes,senha,cargo
 0,Diego Penna,Galo2013,gerente
 1,gerente,23901,gerente
 2,administrador,23901,administrador
+3,funcionario,23901,funcionario
 4,cliente,23901,cliente
-3,funcionario,23901,funcionario
