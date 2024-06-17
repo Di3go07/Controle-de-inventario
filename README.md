@@ -81,3 +81,8 @@ Aproveite o programa!
 Diego Penna Andrade Barros <br>
 PDITA 274
 
+Thiago Santos Madeira <br>
+PDITA 010
+
+Maria Clara Souza Araújo <br>
+199
