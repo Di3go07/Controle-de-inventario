@@ -50,24 +50,35 @@ def usuario_linha(user):
         print('2 - usuarios')
         resposta = int(input('O que você deseja manipular: '))
         if resposta == 1:
+            print('')
+            print('Painel de inventário')
             print('1 - Ler inventário')
             print('2 - Editar produto')
             print('3 - Adicionar produto')
             print('4 - Excluir produto')
             gerente_resposta = int(input('Opção: '))
             if gerente_resposta == 1:
+                print('')
                 print('Tabela produtos')
                 print(data_prod) 
+            if gerente_resposta ==2:
+                print('Editar id, nome, preço e quantidade')
+                sequencia = edit_produto()
             if gerente_resposta == 3:
                 sequencia = criar_produto()
             if gerente_resposta == 4:
                 sequencia = del_prods()
+
         elif resposta == 2:
+            print('')
+            print('Painel de usuários')
             print('1 - Tabela usuarios')
             print('2 - Adicionar usuario')
             print('3 - Excluir usuario')
             gerente_resposta = int(input('Opção: '))
             if gerente_resposta == 1:
+                print('')
+                print('Tabela usuários')
                 print(data)
                 sequencia = usuario_linha(user)
             if gerente_resposta == 2:
@@ -83,6 +94,15 @@ def usuario_linha(user):
             print('3 - Adicionar produto')
             print('4 - Tabela usuarios')
             adm_resposta = int(input('Opção: '))
+            if adm_resposta == 1:
+                print('')
+                print('Tabela produtos')
+                print(data_prod) 
+            if adm_resposta ==2:
+                print('Editar id, nome, preço e quantidade')
+                sequencia = edit_produto()
+            if adm_resposta == 3:
+                sequencia = criar_produto()
 
     #funcionario
     elif linha_user['cargo'].unique() == 'funcionario':
@@ -90,6 +110,15 @@ def usuario_linha(user):
             print('1 - Ler inventário')
             print('2 - Adicionar produto')
             func_resposta = int(input('Opção: '))
+            if func_resposta == 1:
+                print('')
+                print('Tabela produtos')
+                print(data_prod) 
+            if func_resposta == 2:
+                sequencia = criar_produto()
+                print('')
+                print('Tabela usuários')
+                print(data)          
 
     #cliente
     elif linha_user['cargo'].unique() == 'cliente':
@@ -203,6 +232,39 @@ def del_prods():
         elif ver_tabela == 'n':
             print('Fim')
 
+#editar produto
+def edit_produto():
+    nome_antigo = input('Nome atual do produto: ')
+    quebra = data_prod['material'] == nome_antigo
+    linha_user = data_prod[quebra]
+    print('')
+    print('Produto atualmente na tabela')
+    print(linha_user)
+    print('')
+    print('Página de edição')
+    id = int(input('Nova id: '))
+    novo_nome = input('Novo nome: ')
+    preco = float(input('Novo preço por unidade: '))
+    quantidade = int(input('Nova quantidade: '))
+
+    edit_produto = [id,novo_nome,preco,quantidade]
+
+    with open('./tabela_produtos.csv', 'r') as file:
+        reader = csv.reader(file)
+        linhas = list(reader)
+        linhas_filtradas = [linha for linha in linhas if len(linha) > 1 and linha[1].lower() != nome_antigo.lower()]
+    file.close()
+    with open('./tabela_produtos.csv', 'w', newline='') as file: 
+        writer = csv.writer(file)
+        writer.writerows(linhas_filtradas)
+    file.close()
+    with open('./tabela_produtos.csv', 'a', newline='') as file: 
+        writer = csv.writer(file)
+        writer.writerow(edit_produto)
+    file.close()
+    print('')
+    print('Produto atualizado!')
+    print('Abra novamente o programa!')
 
 #HEADER
 print('')
