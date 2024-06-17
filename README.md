@@ -76,5 +76,8 @@ Caso deseje logar com um usuario, algumas contas já criadas são:
 
 Aproveite o programa!
 
+## 👨‍💻 Desenvolvedores
 
+Diego Penna Andrade Barros
+PDITA 274
 
