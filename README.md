@@ -78,6 +78,6 @@ Aproveite o programa!
 
 ## 👨‍💻 Desenvolvedores
 
-Diego Penna Andrade Barros
+Diego Penna Andrade Barros <br>
 PDITA 274
 
